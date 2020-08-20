@@ -1,0 +1,108 @@
+@page
+@model JobTrackWebApp.Pages.Jobs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].company)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].job_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].last_checked)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].last_updated)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].date_applied)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].interview)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].rejected)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].city)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].state)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Job[0].country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Job) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.company)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.job_number)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_checked)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.last_updated)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_applied)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.interview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.rejected)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.city)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.state)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.country)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
